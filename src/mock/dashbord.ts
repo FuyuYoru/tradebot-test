@@ -7,7 +7,7 @@ export const dashbordData = {
         {
             "name": "yellow_bot",
             "type": "megabot",
-             "color": "",
+             "color": "#ffdb00",
             "cost": 10000,
             "24h": 3.15,
             "7d": 0.065,
@@ -31,7 +31,7 @@ export const dashbordData = {
         {
             "name": "green_bot",
             "type": "defence",
-            "color": "",
+            "color": "#5ea853",
             "cost": 4200,
             "24h": 3.33,
             "7d": -17.6,
@@ -43,7 +43,7 @@ export const dashbordData = {
         {
             "name": "red_bot",
             "type": "attack",
-            "color": "",
+            "color": "#ff1704",
             "cost": 1500,
             "24h": -10.8,
             "7d": 5.5,
@@ -55,7 +55,7 @@ export const dashbordData = {
         {
             "name": "blue_bot",
             "type": "balance",
-            "color": "",
+            "color": "#0095c7",
             "cost": 7400,
             "24h": -6.5,
             "7d": -4.3,
@@ -67,7 +67,7 @@ export const dashbordData = {
         {
             "name": "orange_bot",
             "type": "attack",
-            "color": "",
+            "color": "#ff6400",
             "cost": 550,
             "24h": 210.1,
             "7d": 81.3,
