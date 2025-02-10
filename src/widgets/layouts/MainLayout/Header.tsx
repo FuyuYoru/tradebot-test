@@ -17,9 +17,9 @@ export const Header:FC = () =>  {
     const pageTitle = pageTitles[location.pathname] || '404';
 
     return(
-        <header className="flex flex-row px-4 py-8">
+        <header className="flex flex-row px-4 py-4 justify-between">
             <AlignJustify />
-                <p>{pageTitle}</p>
+                <p className="text-lg font-bold">{pageTitle}</p>
             <RefreshCcw />
         </header>
     )

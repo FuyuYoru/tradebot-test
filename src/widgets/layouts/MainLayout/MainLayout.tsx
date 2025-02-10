@@ -3,14 +3,14 @@ import { NavBar } from "@/widgets/layouts/MainLayout/NavBar";
 import { FC } from "react";
 import { Outlet } from "react-router-dom";
 
-export const MainLayout:FC = () =>  {
-    return(
-        <div className="flex flex-col w-[100%] h-[100%]">
+export const MainLayout: FC = () => {
+    return (
+        <div className="grid grid-rows-[auto_1fr_auto] h-dvh w-full">
             <Header />
-            <div>
+            <main className="overflow-auto">
                 <Outlet />
-            </div>
+            </main>
             <NavBar />
         </div>
-    )
-}
+    );
+};

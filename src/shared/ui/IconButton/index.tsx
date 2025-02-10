@@ -8,9 +8,9 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement>{
 
 export const IconButton: FC<Props> = ({icon, text, className, ...props}) => {
     return (
-        <button className={clsx('flex flex-col', className)} {...props}>
+        <button className={clsx('flex flex-col items-center', className)} {...props}>
             <span>{icon}</span>
-            <span>{text}</span>
+            <span className="text-xs">{text}</span>
         </button>
     )
 }

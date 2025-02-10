@@ -1,4 +1,4 @@
-export const dashbordData = {
+export const dashboardData = {
     "trading_capital": 3.081,
     "trading_capital_currency": "eth",
     "balance": 14630,
@@ -7,14 +7,16 @@ export const dashbordData = {
         {
             "name": "yellow_bot",
             "type": "megabot",
-             "color": "#ffdb00",
+            "color": "#ffdb00",
             "cost": 10000,
             "24h": 3.15,
             "7d": 0.065,
             "30d": 4.1,
             "60d": 15.04,
             "90d": 80.25,
-            "all_time": 126.85
+            "all_time": 126.85,
+            "full_statistics": [],
+            "started_at": "2024-02-08T12:00:00"
         },
         {
             "name": "white_bot",
@@ -26,7 +28,9 @@ export const dashbordData = {
             "30d": 14.15,
             "60d": 46.5,
             "90d": 38.4,
-            "all_time": 34.82
+            "all_time": 34.82,
+            "full_statistics": [],
+            "started_at": "2024-02-08T12:00:00"
         },
         {
             "name": "green_bot",
@@ -38,7 +42,9 @@ export const dashbordData = {
             "30d": -2.5,
             "60d": 13.0,
             "90d": 25.1,
-            "all_time": 4.99
+            "all_time": 4.99,
+            "full_statistics": [],
+            "started_at": "2024-02-08T12:00:00"
         },
         {
             "name": "red_bot",
@@ -50,7 +56,9 @@ export const dashbordData = {
             "30d": 11.4,
             "60d": 12.1,
             "90d": 24.36,
-            "all_time": 71.0
+            "all_time": 71.0,
+            "full_statistics": [],
+            "started_at": "2024-02-08T12:00:00"
         },
         {
             "name": "blue_bot",
@@ -62,7 +70,10 @@ export const dashbordData = {
             "30d": -0.17,
             "60d": 4.32,
             "90d": 6.8,
-            "all_time": 10.1
+            "all_time": 10.1,
+            "full_statistics": [],
+            "started_at": "2024-02-08T12:00:00"
+
         },
         {
             "name": "orange_bot",
@@ -74,7 +85,9 @@ export const dashbordData = {
             "30d": 90.7,
             "60d": 13.4,
             "90d": -40.6,
-            "all_time": 98.67
+            "all_time": 98.67,
+            "full_statistics": [],
+            "started_at": "2024-02-08T12:00:00"
         }
     ]
 }

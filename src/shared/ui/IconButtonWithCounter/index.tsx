@@ -9,12 +9,12 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const IconButtonWithCounter: FC<Props> = ({ icon, text, className, counterValue = 0, ...props }) => {
     return (
-        <button className={clsx('flex flex-col', className)} {...props}>
+        <button className={clsx('flex flex-col items-center relative', className)} {...props}>
             {counterValue &&
-                <span>{counterValue}</span>
+                <span className="absolute top-[-15%] left-[63%] w-[21px] h-[21px] text-white bg-[#fb9818] rounded-full flex justify-center items-center">{counterValue}</span>
             }
             <span>{icon}</span>
-            <span>{text}</span>
+            <span className="text-xs">{text}</span>
         </button>
     )
 }
