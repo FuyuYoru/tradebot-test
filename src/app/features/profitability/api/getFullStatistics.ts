@@ -10,7 +10,7 @@ export const getFullStatistics = async (): Promise<IProfitability> => {
         statistics.bots.map(async bot => {
             const start = new Date(bot.started_at);
             const now = new Date();
-            const hoursDiff = Math.floor((now - start) / (1000 * 60 * 60 * 2));
+            const hoursDiff = Math.floor((now - start) / (1000 * 60 * 60));
 
             const fullStatistics = await new Promise(resolve => {
                 setTimeout(() => {

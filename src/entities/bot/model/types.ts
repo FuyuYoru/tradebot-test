@@ -9,6 +9,6 @@ export interface IBot {
     "60d": number,
     "90d": number,
     "all_time": number,
-    "started_at": Date,
-    "full_statistics": null | number[]
+    "started_at": string,
+    "fullStatistics": number[],
 }

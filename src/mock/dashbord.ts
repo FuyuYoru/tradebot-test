@@ -15,13 +15,13 @@ export const dashboardData = {
             "60d": 15.04,
             "90d": 80.25,
             "all_time": 126.85,
-            "full_statistics": [],
-            "started_at": "2024-02-08T12:00:00"
+            "fullStatistics": [],
+            "started_at": "2024-02-08"
         },
         {
             "name": "white_bot",
             "type": "balance",
-            "color": "",
+            "color": "#ffffff",
             "cost": 3800,
             "24h": 1.5,
             "7d": 12.0,
@@ -29,7 +29,7 @@ export const dashboardData = {
             "60d": 46.5,
             "90d": 38.4,
             "all_time": 34.82,
-            "full_statistics": [],
+            "fullStatistics": [],
             "started_at": "2024-02-08T12:00:00"
         },
         {
@@ -43,7 +43,7 @@ export const dashboardData = {
             "60d": 13.0,
             "90d": 25.1,
             "all_time": 4.99,
-            "full_statistics": [],
+            "fullStatistics": [],
             "started_at": "2024-02-08T12:00:00"
         },
         {
@@ -56,8 +56,8 @@ export const dashboardData = {
             "30d": 11.4,
             "60d": 12.1,
             "90d": 24.36,
+            "fullStatistics": [],
             "all_time": 71.0,
-            "full_statistics": [],
             "started_at": "2024-02-08T12:00:00"
         },
         {
@@ -71,7 +71,7 @@ export const dashboardData = {
             "60d": 4.32,
             "90d": 6.8,
             "all_time": 10.1,
-            "full_statistics": [],
+            "fullStatistics": [],
             "started_at": "2024-02-08T12:00:00"
 
         },
@@ -86,7 +86,7 @@ export const dashboardData = {
             "60d": 13.4,
             "90d": -40.6,
             "all_time": 98.67,
-            "full_statistics": [],
+            "fullStatistics": [],
             "started_at": "2024-02-08T12:00:00"
         }
     ]
