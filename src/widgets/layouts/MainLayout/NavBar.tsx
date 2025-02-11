@@ -16,7 +16,7 @@ export const NavBar = () => {
     ];
   
     return (
-      <div className='bg-[#18283c] px-4 py-1'>
+      <div className='bg-[#18283c] px-4 py-[1px]'>
         <div className="flex flex-row justify-between ">
           {navLinks.map((link) => (
             <Link

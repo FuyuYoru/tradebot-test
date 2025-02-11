@@ -1,43 +1,65 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { IntervalSelector } from "@/shared/ui/IntervalSelector";
 import { useProfitabilityStore } from "@/app/features/profitability/model/store";
-import { BotCard } from "@/entities/bot";
+import { BotCard, IBot } from "@/entities/bot";
 import { ProfitChart } from "@/app/features/profitability/ui/ProfitChart";
 
 export const Dashboard = () => {
     const { trading_capital, trading_capital_currency, balance, on_hold, bots, loadProfitabilityData } = useProfitabilityStore();
 
+    const [selectedBot, setSelectedBot] = useState<IBot | null>(null);
+    const [selectedPeriod, setSelectedPeriod] = useState<'24h' | '7d'| '30d'| 'all_time'>('7d');
+
     useEffect(() => {
-        if ([trading_capital, trading_capital_currency, balance, on_hold, bots].every(value => value === null)) {
-            loadProfitabilityData();
-        }
-        console.log(bots[0]);
+        const fetchData = async () => {
+            if ([trading_capital, trading_capital_currency, balance, on_hold, bots].every(value => value === null)) {
+                await loadProfitabilityData();
+                if (bots && bots.length > 0) {
+                    setSelectedBot(bots[0]);
+                }
+            }
+        };
+
+        fetchData();
     }, [trading_capital, trading_capital_currency, balance, on_hold, bots, loadProfitabilityData]);
-    
+
+    useEffect(() => {
+        if (bots && bots.length > 0) {
+            setSelectedBot(bots.find(item => item.name === selectedBot?.name) || bots[0]); 
+        }
+    }, [bots]);
+
     return (
-        <div className="w-full h-full flex flex-col py-4 gap-4">
-            <div className="flex flex-row px-2 justify-between">
-                <div className="flex flex-col">
-                    <p className="font-extrabold">TRADING CAPITAL</p>
-                    <p className="text-4xl text-white    ">{`${trading_capital} ${trading_capital_currency?.toUpperCase()}`}</p>
+        <div className="w-full h-full flex flex-col pb-4">
+            <div className="max-h-[50%] flex flex-col gap-4 ">
+                <div className="flex flex-row px-4 justify-between">
+                    <div className="flex flex-col">
+                        <p className="font-bold text-sm">TRADING CAPITAL</p>
+                        <p className="text-4xl text-white    ">{`${trading_capital} ${trading_capital_currency?.toUpperCase()}`}</p>
+                    </div>
+                    <div className="flex flex-col gap-0 items-start justify-end">
+                        <p className="font-bold text-sm">BALANCE: <span className="text-white">{balance}</span></p>
+                        <p className="font-bold text-sm">ON HOLD: <span className="text-white">{on_hold}</span></p>
+                    </div>
                 </div>
-                <div className="flex flex-col gap-0 items-start justify-end">
-                    <p className="font-extrabold">BALANCE: <span className="text-white">{balance}</span></p>
-                    <p className="font-extrabold">ON HOLD: <span className="text-white">{on_hold}</span></p>
+                {selectedBot && <ProfitChart fullStatistics={selectedBot.fullStatistics} startDate={selectedBot.started_at} />}
+            </div>
+            <div className="max-h-[50%] flex flex-col gap-4 ">
+                <div className="flex flex-row flex-wrap w-full px-4 gap-[1px] justify-center">
+                    {bots?.map((item, index) =>
+                        <BotCard 
+                        key={item.name} 
+                        bot={item} 
+                        selectedPeriod={selectedPeriod} 
+                        onClick={() => setSelectedBot(item)} 
+                        isSelected={selectedBot?.name === item.name}
+                        />
+                    )}
                 </div>
-            </div>
-            {bots && bots.length && <ProfitChart fullStatistics={bots[0].fullStatistics} startDate={bots[0].started_at} />}
-            {/* <div className="grow"></div> */}
-            <div className="flex flex-row flex-wrap w-full px-2 gap-[1px]">
-                {bots?.map((item, index) => 
-                    <BotCard key={index} bot={item} selectedPeriod={"24h"} onClick={function (): void {
-                        throw new Error("Function not implemented.");
-                    } }/>
-                )}
-            </div>
-            <div className="flex flex-row w-full px-2 text-sm items-center gap-1">
-                <span className="text-nowrap font-bold">Time Range:</span>
-                <IntervalSelector />
+                <div className="flex flex-row w-full px-4 text-sm items-center gap-1">
+                    <span className="text-nowrap font-bold">Time Range:</span>
+                    <IntervalSelector onChange={(period) => setSelectedPeriod(period)} defaultValue={selectedPeriod}/>
+                </div>
             </div>
         </div>
     );

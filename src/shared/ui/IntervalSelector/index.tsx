@@ -20,14 +20,14 @@ export const IntervalSelector: FC = ({ onChange, defaultValue = '24h' }) => {
     }
 
     return (
-        <div className="w-full flex flex-row gap-2">
+        <div className="grow flex flex-row justify-between overflow-auto">
             {
                 intervals.map((item, index) =>
                     <div
                         key={index}
                         onClick={() => handleChange(item.value)}
                         className={
-                            clsx('flex items-center justify-center rounded-full min-w-[65px] py-1 border border-solid border-[#1c2e45]',
+                            clsx('flex items-center justify-center rounded-full min-w-[60px] py-[2px] border border-solid border-[#1c2e45]',
                                 item.value === interval && 'text-white border-white font-semibold'
                             )
                         }>
