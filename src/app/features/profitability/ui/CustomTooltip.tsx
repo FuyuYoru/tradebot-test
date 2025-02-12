@@ -8,7 +8,7 @@ export const CustomTooltip = ({ payload, label, active }) => {
   return (
     <div
       className="bg-transparent p-2"
-      // style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
+    // style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
     >
       <p className="text-[#5ea753] text-xl text-center">{formattedValue}</p>
     </div>

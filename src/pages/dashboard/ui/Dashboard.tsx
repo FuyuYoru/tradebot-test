@@ -8,7 +8,7 @@ export const Dashboard = () => {
     const { trading_capital, trading_capital_currency, balance, on_hold, bots, loadProfitabilityData } = useProfitabilityStore();
 
     const [selectedBot, setSelectedBot] = useState<IBot | null>(null);
-    const [selectedPeriod, setSelectedPeriod] = useState<'24h' | '7d'| '30d'| 'all_time'>('7d');
+    const [selectedPeriod, setSelectedPeriod] = useState<'24h' | '7d' | '30d' | 'all_time'>('7d');
 
     useEffect(() => {
         const fetchData = async () => {
@@ -25,14 +25,14 @@ export const Dashboard = () => {
 
     useEffect(() => {
         if (bots && bots.length > 0) {
-            setSelectedBot(bots.find(item => item.name === selectedBot?.name) || bots[0]); 
+            setSelectedBot(bots.find(item => item.name === selectedBot?.name) || bots[0]);
         }
     }, [bots]);
 
     return (
-        <div className="w-full h-full flex flex-col pb-4">
-            <div className="max-h-[50%] flex flex-col gap-4 ">
-                <div className="flex flex-row px-4 justify-between">
+        <div className="w-full h-full flex flex-col justify-between h-[calc(100dvh - 8rem)]">
+            <div className="flex flex-col gap-4 h-[50%]">
+                <div className="flex flex-row px-4 justify-between h-[4rem]">
                     <div className="flex flex-col">
                         <p className="font-bold text-sm">TRADING CAPITAL</p>
                         <p className="text-4xl text-white    ">{`${trading_capital} ${trading_capital_currency?.toUpperCase()}`}</p>
@@ -44,21 +44,21 @@ export const Dashboard = () => {
                 </div>
                 {selectedBot && <ProfitChart fullStatistics={selectedBot.fullStatistics} startDate={selectedBot.started_at} />}
             </div>
-            <div className="max-h-[50%] flex flex-col gap-4 ">
-                <div className="flex flex-row flex-wrap w-full px-4 gap-[1px] justify-center">
+            <div className="flex flex-col h-[50%]">
+                <div className="flex flex-row flex-wrap w-full h-[80%] px-4 gap-[1px] justify-center">
                     {bots?.map((item, index) =>
-                        <BotCard 
-                        key={item.name} 
-                        bot={item} 
-                        selectedPeriod={selectedPeriod} 
-                        onClick={() => setSelectedBot(item)} 
-                        isSelected={selectedBot?.name === item.name}
+                        <BotCard
+                            key={item.name}
+                            bot={item}
+                            selectedPeriod={selectedPeriod}
+                            onClick={() => setSelectedBot(item)}
+                            isSelected={selectedBot?.name === item.name}
                         />
                     )}
                 </div>
-                <div className="flex flex-row w-full px-4 text-sm items-center gap-1">
+                <div className="flex flex-row w-full h-[20%] px-4 text-sm items-center gap-1">
                     <span className="text-nowrap font-bold">Time Range:</span>
-                    <IntervalSelector onChange={(period) => setSelectedPeriod(period)} defaultValue={selectedPeriod}/>
+                    <IntervalSelector onChange={(period) => setSelectedPeriod(period)} defaultValue={selectedPeriod} />
                 </div>
             </div>
         </div>

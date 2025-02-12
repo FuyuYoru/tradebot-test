@@ -5,18 +5,18 @@ export const dashboardData = {
     "on_hold": 8300,
     "bots": [
         {
-            "name": "yellow_bot",
-            "type": "megabot",
-            "color": "#ffdb00",
-            "cost": 10000,
-            "24h": 3.15,
-            "7d": 0.065,
-            "30d": 4.1,
-            "60d": 15.04,
-            "90d": 80.25,
-            "all_time": 126.85,
+            "name": "orange_bot",
+            "type": "attack",
+            "color": "#ff6400",
+            "cost": 550,
+            "24h": 210.1,
+            "7d": 81.3,
+            "30d": 90.7,
+            "60d": 13.4,
+            "90d": -40.6,
+            "all_time": 98.67,
             "fullStatistics": [],
-            "started_at": "2024-02-08"
+            "started_at": "2024-02-08T12:00:00"
         },
         {
             "name": "white_bot",
@@ -30,34 +30,6 @@ export const dashboardData = {
             "90d": 38.4,
             "all_time": 34.82,
             "fullStatistics": [],
-            "started_at": "2024-02-08T12:00:00"
-        },
-        {
-            "name": "green_bot",
-            "type": "defence",
-            "color": "#5ea853",
-            "cost": 4200,
-            "24h": 3.33,
-            "7d": -17.6,
-            "30d": -2.5,
-            "60d": 13.0,
-            "90d": 25.1,
-            "all_time": 4.99,
-            "fullStatistics": [],
-            "started_at": "2024-02-08T12:00:00"
-        },
-        {
-            "name": "red_bot",
-            "type": "attack",
-            "color": "#ff1704",
-            "cost": 1500,
-            "24h": -10.8,
-            "7d": 5.5,
-            "30d": 11.4,
-            "60d": 12.1,
-            "90d": 24.36,
-            "fullStatistics": [],
-            "all_time": 71.0,
             "started_at": "2024-02-08T12:00:00"
         },
         {
@@ -76,18 +48,47 @@ export const dashboardData = {
 
         },
         {
-            "name": "orange_bot",
-            "type": "attack",
-            "color": "#ff6400",
-            "cost": 550,
-            "24h": 210.1,
-            "7d": 81.3,
-            "30d": 90.7,
-            "60d": 13.4,
-            "90d": -40.6,
-            "all_time": 98.67,
+            "name": "green_bot",
+            "type": "defence",
+            "color": "#5ea853",
+            "cost": 4200,
+            "24h": 3.33,
+            "7d": -17.6,
+            "30d": -2.5,
+            "60d": 13.0,
+            "90d": 25.1,
+            "all_time": 4.99,
             "fullStatistics": [],
             "started_at": "2024-02-08T12:00:00"
-        }
+        },
+        {
+            "name": "yellow_bot",
+            "type": "megabot",
+            "color": "#ffdb00",
+            "cost": 10000,
+            "24h": 3.15,
+            "7d": 0.065,
+            "30d": 4.1,
+            "60d": 15.04,
+            "90d": 80.25,
+            "all_time": 126.85,
+            "fullStatistics": [],
+            "started_at": "2024-02-08"
+        },
+        
+        {
+            "name": "red_bot",
+            "type": "attack",
+            "color": "#ff1704",
+            "cost": 1500,
+            "24h": -10.8,
+            "7d": 5.5,
+            "30d": 11.4,
+            "60d": 12.1,
+            "90d": 24.36,
+            "fullStatistics": [],
+            "all_time": 71.0,
+            "started_at": "2024-02-08T12:00:00"
+        },
     ]
 }

@@ -26,12 +26,15 @@ export const ProfitChart = ({ fullStatistics, startDate }: Props) => {
   });
 
   return (
-    <div className="w-full h-[20%] grow overflow-x-auto bg-dark">
-      <div className="min-w-[1200px] h-[11rem]">
-        <ResponsiveContainer height="100%" width={chartData.length * 80}>
-          <ComposedChart 
-          data={chartData} 
-          margin={{right: 30, left: 0, bottom: 20 }} >
+    <div className="w-full overflow-x-auto bg-dark">
+      <div
+        className="w-full"
+        style={{ height: `calc(50dvh - 9rem)` }}
+      >
+        <ResponsiveContainer height="100%" width={chartData.length * 16}>
+          <ComposedChart
+            data={chartData}
+            margin={{ right: 30, left: 0, bottom: 5 }} >
             <CartesianGrid strokeOpacity={0.2} vertical={true} />
             <defs>
               <linearGradient id="profitGradient" x1="0" y1="1" x2="0" y2="0">

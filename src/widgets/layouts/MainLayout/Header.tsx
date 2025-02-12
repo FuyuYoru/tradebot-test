@@ -11,22 +11,24 @@ const pageTitles = {
     '/profile': 'Profile',
 }
 
-export const Header:FC = () =>  {
+export const Header: FC = () => {
 
     const location = useLocation();
-    const {loadProfitabilityData} = useProfitabilityStore();
+    const { loadProfitabilityData } = useProfitabilityStore();
     const pageTitle = pageTitles[location.pathname] || '404';
 
     const reloadAction = async () => {
-        console.log('WORKED')
         await loadProfitabilityData();
     }
 
-    return(
-        <header className="flex flex-row px-4 py-4 justify-between">
+    return (
+        <header className="flex flex-row px-4 h-[4rem] justify-between items-center relative">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[150px] h-[50px] bg-[#023150] blur-xl"></div>
             <AlignJustify />
-                <p className="text-lg font-bold">{pageTitle}</p>
-            <RefreshCcw onClick={reloadAction}/>
+            <p className="relative text-lg font-bold" >
+                {pageTitle}
+            </p>
+            <RefreshCcw onClick={reloadAction} />
         </header>
     )
 }
