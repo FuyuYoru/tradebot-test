@@ -1,5 +1,4 @@
 import { create } from "zustand";
-import { IProfitability } from "../types";
 import { IBot } from "@/entities/bot";
 import { getFullStatistics } from "../api/getFullStatistics";
 

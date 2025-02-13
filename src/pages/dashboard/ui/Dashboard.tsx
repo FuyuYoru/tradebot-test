@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { IntervalSelector } from "@/shared/ui/IntervalSelector";
-import { useProfitabilityStore } from "@/app/features/profitability/model/store";
+import { useProfitabilityStore } from "@/features/profitability/model/store";
 import { BotCard, IBot } from "@/entities/bot";
-import { ProfitChart } from "@/app/features/profitability/ui/ProfitChart";
+import { ProfitChart } from "@/features/profitability/ui/ProfitChart";
 
 export const Dashboard = () => {
     const { trading_capital, trading_capital_currency, balance, on_hold, bots, loadProfitabilityData } = useProfitabilityStore();
@@ -46,7 +46,7 @@ export const Dashboard = () => {
             </div>
             <div className="flex flex-col h-[50%]">
                 <div className="flex flex-row flex-wrap w-full h-[80%] px-4 gap-[1px] justify-center">
-                    {bots?.map((item, index) =>
+                    {bots?.map((item) =>
                         <BotCard
                             key={item.name}
                             bot={item}

@@ -1,6 +1,5 @@
-import { CustomTooltip } from "@/app/features/profitability/ui/CustomTooltip";
-import { useState, useEffect } from "react";
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Area, defs, linearGradient, stop, ComposedChart } from "recharts";
+import { CustomTooltip } from "@/features/profitability/ui/CustomTooltip";
+import { Line, XAxis, Tooltip, ResponsiveContainer, CartesianGrid, Area, defs, ComposedChart } from "recharts";
 
 type Props = {
   fullStatistics: number[];

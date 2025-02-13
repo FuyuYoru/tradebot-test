@@ -1,4 +1,4 @@
-import { useProfitabilityStore } from "@/app/features/profitability/model/store";
+import { useProfitabilityStore } from "@/features/profitability/model/store";
 import { AlignJustify, RefreshCcw } from "lucide-react";
 import { FC } from "react";
 import { useLocation } from "react-router-dom";
